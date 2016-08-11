@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var displayText: UILabel!
     
+    var items = [Double]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,17 +23,55 @@ class ViewController: UIViewController {
         
     }
     
+    var isUserTyping = false
+    
+    var displayValue: Double {
+        get{
+            return NSNumberFormatter().numberFromString(displayText.text!)!.doubleValue
+        }
+        set {
+            displayText.text = "\(newValue)"
+        }
+    }
+    
+    var operands = [Double]()
     
     @IBAction func appendDigit(sender: UIButton) {
-        if (displayText.text == "\(0)"){
-                displayText.text! = sender.titleLabel!.text!
+        
+        let digit = sender.currentTitle!
+
+        if digit == "." && Int(displayText.text!) == nil {
+            return
         }
-        else {
-            displayText.text! += sender.titleLabel!.text!
+        
+        if isUserTyping {
+            if digit == "." {
+                displayText.text! += "."
+            } else {
+                displayText.text! += digit
+            }
+        } else {
+            if digit == "." {
+                displayText.text = "0."
+            } else {
+                displayText.text = digit
+            }
+            isUserTyping = true
+            
         }
         
     }
     
+    @IBAction func enter() {
+        
+    }
+    
+    
+    @IBAction func reset() {
+        operands.removeAll()
+        isUserTyping = false
+        displayValue = 0.0
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

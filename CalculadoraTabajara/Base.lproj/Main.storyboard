@@ -112,6 +112,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eg-mx-H13">
                                 <rect key="frame" x="249" y="485" width="102" height="107"/>
                                 <state key="normal" title="↵"/>
+                                <connections>
+                                    <action selector="enter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0U-GN-cZc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzI-Jl-TMZ">
                                 <rect key="frame" x="359" y="485" width="103" height="107"/>
@@ -120,6 +123,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgz-4X-Suh">
                                 <rect key="frame" x="470" y="138" width="102" height="108"/>
                                 <state key="normal" title="CE"/>
+                                <connections>
+                                    <action selector="reset" destination="BYZ-38-t0r" eventType="touchUpInside" id="kks-db-NcE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27B-1k-o8G">
                                 <rect key="frame" x="470" y="254" width="102" height="107"/>
@@ -237,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="416" y="323"/>
+            <point key="canvasLocation" x="574" y="241"/>
         </scene>
     </scenes>
 </document>
